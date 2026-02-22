@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        double notas[] = new double[10];
+        double[] notas = new double[10];
 
         //Asignamos valores a cada posicion
         for (int i = 0; i < notas.length; i++) {
@@ -18,15 +18,15 @@ public class Main {
 
     }
 
-    public static double promedio(double notas[]) {
+    public static double promedio(double[] notas) {
         double suma = 0;
-        for (int i = 0; i < notas.length; i++) {
-            suma += notas[i];
+        for (double nota : notas) {
+            suma += nota;
         }
         return suma / notas.length;
     }
 
-    public static double notaMaxima(double notas[]) {
+    public static double notaMaxima(double[] notas) {
         double notaMax = 0;
         for (double nota : notas) {
             if (nota > notaMax) {
@@ -36,7 +36,7 @@ public class Main {
         return notaMax;
     }
 
-    public static double notaMinima(double notas[]) {
+    public static double notaMinima(double[] notas) {
         double notaMin = 5;
         for (double nota : notas) {
             if (nota < notaMin) {
@@ -46,7 +46,7 @@ public class Main {
         return notaMin;
     }
 
-    public static byte cantidadAprobados(double notas[]) {
+    public static byte cantidadAprobados(double[] notas) {
         byte cant = 0;
         for (double nota : notas) {
             if (nota >= 3) {
