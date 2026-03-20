@@ -1,13 +1,29 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+public class Main {
+    public static void main(String[] args) {
+        ListaRanking lista = new ListaRanking();
+        lista.insertarFinal(new Jugador("Good", "ATK", 1200));
+        lista.insertarFinal(new Jugador("Raven", "DEF", 900));
+        lista.insertarFinal(new Jugador("One", "HEALER", 1200));
+        lista.insertarFinal(new Jugador("DirtyDavid", "DEF", 1500));
+        lista.insertarFinal(new Jugador("Cross","DEF", 700));
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+        System.out.println("Lista completa:");
+        lista.listar();
+
+        System.out.println("\nCantidad de nodos: " + lista.countNodes());
+
+        Jugador max = lista.findMax();
+        System.out.println("\nMayor puntaje: " + (max != null ? max : "lista vacía"));
+
+        System.out.println("\nNodo medio: " + (lista.findMiddleNode() != null ? lista.findMiddleNode() : "lista vacía"));
+
+        System.out.println("\nDuplicados por score:");
+        System.out.println(lista.findDuplicatesByScore());
+
+        System.out.println("\nOrdenando descendente...");
+        lista.sortDescending();
+        lista.listar();
+
+        System.out.println("\nBuscar 'Bob': " + (lista.buscar("Bob") != null ? lista.buscar("Bob") : "no encontrado"));
     }
 }
