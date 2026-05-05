@@ -1,24 +1,14 @@
 public class Nodo {
-    private Busqueda dato;
+    private pagina dato;
     private Nodo siguiente;
 
-    public Busqueda getDato() {
-        return dato;
-    }
+    public pagina getDato() { return dato; }
+    public void setDato(pagina dato) { this.dato = dato; }
 
-    public void setDato(Busqueda dato) {
-        this.dato = dato;
-    }
+    public Nodo getSiguiente() { return siguiente; }
+    public void setSiguiente(Nodo siguiente) { this.siguiente = siguiente; }
 
-    public Nodo getSiguiente() {
-        return siguiente;
-    }
-
-    public void setSiguiente(Nodo siguiente) {
-        this.siguiente = siguiente;
-    }
-
-    public Nodo(Busqueda dato) {
+    public Nodo(pagina dato) {
         this.dato = dato;
     }
 }

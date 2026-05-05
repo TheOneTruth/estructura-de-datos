@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        ListaHistorial historial = new ListaHistorial();
+        GestionHistorial historial = new GestionHistorial();
 
         System.out.println("=== Insertando paginas ===");
         historial.insertar(new pagina("https://google.com"));
@@ -12,15 +12,15 @@ public class Main {
         historial.mostrar();
 
         System.out.println("\n=== Busqueda ===");
-        Nodo resultado = historial.buscar("https://github.com");
+        pagina resultado = historial.buscar("https://github.com");
         if (resultado != null) {
-            System.out.println("  Encontrada: " + resultado.getDato().getUrl()
-                    + " | " + resultado.getDato().getFecha());
+            System.out.println("  Encontrada: " + resultado.getUrl()
+                    + " | " + resultado.getFecha());
         } else {
             System.out.println("  No encontrada.");
         }
 
-        Nodo noExiste = historial.buscar("https://facebook.com");
+        pagina noExiste = historial.buscar("https://facebook.com");
         if (noExiste == null) {
             System.out.println("  No encontrada: https://facebook.com");
         }
